@@ -5,6 +5,7 @@
 #define NumOfResult     8
 #define Max_Volt        3.3
 #define Accu_Adc        4095
+#define REC_CAP         256
 
 uint32_t  results[NumOfResult+1];
 uint16_t  average;
@@ -13,6 +14,16 @@ uint8_t con[10] , trans_v[10], lcd_data[10];
 uint16_t  xp = 0;
 uint16_t  yp = 0;
 uint16_t  yp1 = 0;
+uint16_t  record[REC_CAP];
+uint16_t  maxvalue;
+uint16_t  minvalue;
+uint16_t  Vpp=0;
+uint16_t  Freq;
+uint16_t  FreqCycle;
+uint16_t  div=0;
+uint8_t   flagstat = 0;
+uint16_t  flagone;
+uint16_t  flagtwo;
 
 unsigned static int t = 0;
 unsigned int mode2=0;   //PWM
@@ -186,6 +197,30 @@ int16_t Trans_val(uint16_t number,uint16_t system, uint8_t *output)
     return i;
  }
 
+uint16_t mymax(uint16_t *num)
+{
+    uint16_t whyitissohardtofindavariablenotused = 0;
+    int cnt = 0;
+    for (cnt = 0; cnt < REC_CAP; cnt ++)
+    {
+        if (num[cnt] > whyitissohardtofindavariablenotused)
+            whyitissohardtofindavariablenotused = num[cnt];
+    }
+    return whyitissohardtofindavariablenotused;
+}
+
+uint16_t mymin(uint16_t *num)
+{
+    uint16_t whyitissohardtofindavariablenotused = 4096;
+    int cnt = 0;
+    for (cnt = 0; cnt < REC_CAP; cnt ++)
+    {
+        if (num[cnt] < whyitissohardtofindavariablenotused)
+            whyitissohardtofindavariablenotused = num[cnt];
+    }
+    return whyitissohardtofindavariablenotused;
+}
+
 int16_t Translator(uint16_t number, uint8_t *output)
 {
     int16_t Quotient, Balance, i = 0,j ,k;
@@ -265,6 +300,13 @@ int main(void)
 
     Init_LCD_TFT_ILI9325(); //"彩屏LCD_TFT_ILI9325" 初使化: 所有相关资源的初始化
     //LCD_TFT_ShowChar(2,2,'A',1,0x001F,0xFFE0);//test lcd tft
+    LCD_TFT_ShowString(2,2,"Vmax",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(22,2,"Vmin",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(42,2,"Vpp",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(2,82,"mV",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(22,82,"mV",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(42,82,"mV",2,0x001F,0xFFE0);
+    LCD_TFT_ShowString(62,2,"Min=0, Max=1600",2,0x001F,0xFFE0);
 
 	P4DIR|=BIT4+BIT5+BIT6;      //led
 	P4IE |= BIT0; // key enable P2.6 interrupt
@@ -279,6 +321,9 @@ int main(void)
     ADC12CTL0 |= ADC12ENC;                    // Enable conversions
     ADC12CTL0 |= ADC12SC;                     // Start conversion
     _EINT();                                  // Enable all interrupt
+
+    P1DIR |= BIT0;
+    //P1OUT |= BIT0;
 
     _BIS_SR(LPM4_bits + GIE);                 // Enter LPM4, Enable interrupts
     while(1)
@@ -310,6 +355,13 @@ __interrupt void ADC12ISR (void)
         average >>= 3; //除以8
         index = 0;
 
+
+        if (average > 2000)
+            P1OUT |= BIT0;
+        else
+            P1OUT &= ~BIT0;
+
+/*
         if(average>200)
                 P4OUT|=BIT4;
             else
@@ -322,6 +374,7 @@ __interrupt void ADC12ISR (void)
                 P4OUT|=BIT6;
             else
                 P4OUT&=~BIT6;
+*/
 
         //Conversion(average , 10, con);
         //Trans_val(average , 10, trans_v);
@@ -341,6 +394,52 @@ __interrupt void ADC12ISR (void)
         //LCD_TFT_ShowString(2,2,lcd_data,2,0x001F,0xFFE0);
         //LCD_TFT_ShowString(u16 line,u16 column,u8 *ArrayPoint,u8 Font,u16 pointColor,u16 backColor);
         //LCD_TFT_DrawPoint(240-average/16, xp, 0xFFFF);
+/*
+        record[div++]=average;
+
+        //Vpp Vmax Vmin
+        if (div == REC_CAP){
+            div = 0;
+            maxvalue = mymax(record);
+            minvalue = mymin(record);
+            Vpp = maxvalue - minvalue;//Vpp=4000对应1.6V
+            maxvalue = maxvalue * 0.4;
+            minvalue = minvalue * 0.4;
+            Vpp = Vpp * 0.4;
+            Translator(maxvalue, lcd_data);
+            LCD_TFT_ShowString(2,42,lcd_data,2,0x001F,0xFFE0);
+            Translator(minvalue, lcd_data);
+            LCD_TFT_ShowString(22,42,lcd_data,2,0x001F,0xFFE0);
+            Translator(Vpp, lcd_data);
+            LCD_TFT_ShowString(42,42,lcd_data,2,0x001F,0xFFE0);
+        }
+
+*/
+/*
+        //Freq
+        if (average >= 300 && average <= 700)
+        {
+            if (flagstat == 2)
+            {
+                flagstat = 0;
+                flagtwo = div;
+                if ((int)(flagtwo - flagone) > 0)
+                    FreqCycle = flagtwo - flagone;
+                else
+                    FreqCycle = 128 + flagtwo - flagone;
+            }
+            else if (flagstat == 1)
+                flagstat++;
+            else
+            {
+                flagstat++;
+                flagone = div;
+            }
+        }
+*/
+
+
+
 
 
         //显示波形部分
