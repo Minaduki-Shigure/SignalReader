@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.4                     
 ******************************************************************************
->> Linked Tue Dec 18 20:42:34 2018
+>> Linked Tue Dec 25 19:23:43 2018
 
 OUTPUT FILE NAME:   <Signal_Reader.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00008208
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00008182
 
 
 MEMORY CONFIGURATION
@@ -19,8 +19,8 @@ MEMORY CONFIGURATION
   INFOB                 00001900   00000080  00000000  00000080  RWIX
   INFOA                 00001980   00000080  00000000  00000080  RWIX
   USBRAM                00001c00   00000800  00000000  00000800  RWIX
-  RAM                   00002400   00004000  000004cb  00003b35  RWIX
-  FLASH                 00008000   00007f80  00000d5e  00007222  RWIX
+  RAM                   00002400   00004000  000004b3  00003b4d  RWIX
+  FLASH                 00008000   00007f80  00000274  00007d0c  RWIX
   INT00                 0000ff80   00000002  00000000  00000002  RWIX
   INT01                 0000ff82   00000002  00000000  00000002  RWIX
   INT02                 0000ff84   00000002  00000000  00000002  RWIX
@@ -85,7 +85,7 @@ MEMORY CONFIGURATION
   INT61                 0000fffa   00000002  00000002  00000000  RWIX
   INT62                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FLASH2                00010000   00038000  000014f8  00036b08  RWIX
+  FLASH2                00010000   00038000  0000114e  00036eb2  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -93,92 +93,85 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.bss       0    00002400    00000326     UNINITIALIZED
+.bss       0    00002400    00000308     UNINITIALIZED
                   00002400    00000268     (.common:G_LcdBuf)
                   00002668    0000002a     (.common:period_table)
                   00002692    00000024     (.common:results)
                   000026b6    00000014     (.common:sin_table)
-                  000026ca    0000000a     (.common:con)
-                  000026d4    0000000a     (.common:lcd_data)
-                  000026de    0000000a     (.common:trans_v)
-                  000026e8    00000004     (.common:BuzzTimeNum)
-                  000026ec    00000004     (.common:sin_data_pr)
-                  000026f0    00000002     (.common:ADC_FlagBits)
-                  000026f2    00000002     (.common:BuzzAlarmCycleCnt)
-                  000026f4    00000002     (.common:BuzzAlarmCycleNum)
-                  000026f6    00000002     (.common:BuzzFlagBits)
-                  000026f8    00000002     (.common:DC_Motor_FlagBits)
-                  000026fa    00000002     (.common:HR202_Humidity_FlagBits)
-                  000026fc    00000002     (.common:INA21x_FlagBits)
-                  000026fe    00000002     (.common:KeyFlagBits)
-                  00002700    00000002     (.common:LCD_Seg_FlagBits)
-                  00002702    00000002     (.common:LCD_TFT_FlagBits)
-                  00002704    00000002     (.common:LED_Seg_FlagBits)
-                  00002706    00000002     (.common:MatrixKeyFlagBits)
-                  00002708    00000002     (.common:NTC_TMP_FlagBits)
-                  0000270a    00000002     (.common:SpeakerFlagBits)
-                  0000270c    00000002     (.common:Step_Motor_FlagBits)
-                  0000270e    00000002     (.common:TimeFlag1Bits)
-                  00002710    00000002     (.common:TimeFlag2Bits)
-                  00002712    00000002     (.common:Update_01Bits)
-                  00002714    00000002     (.common:Update_02Bits)
-                  00002716    00000002     (.common:Update_03Bits)
-                  00002718    00000002     (.common:average)
-                  0000271a    00000002     (.common:hightLight_01Bits)
-                  0000271c    00000002     (.common:hightLight_02Bits)
-                  0000271e    00000002     (.common:k)
-                  00002720    00000002     (.common:key)
-                  00002722    00000002     (.common:m)
-                  00002724    00000002     (.common:n)
+                  000026ca    00000004     (.common:BuzzTimeNum)
+                  000026ce    00000004     (.common:sin_data_pr)
+                  000026d2    00000002     (.common:ADC_FlagBits)
+                  000026d4    00000002     (.common:BuzzAlarmCycleCnt)
+                  000026d6    00000002     (.common:BuzzAlarmCycleNum)
+                  000026d8    00000002     (.common:BuzzFlagBits)
+                  000026da    00000002     (.common:DC_Motor_FlagBits)
+                  000026dc    00000002     (.common:HR202_Humidity_FlagBits)
+                  000026de    00000002     (.common:INA21x_FlagBits)
+                  000026e0    00000002     (.common:KeyFlagBits)
+                  000026e2    00000002     (.common:LCD_Seg_FlagBits)
+                  000026e4    00000002     (.common:LCD_TFT_FlagBits)
+                  000026e6    00000002     (.common:LED_Seg_FlagBits)
+                  000026e8    00000002     (.common:MatrixKeyFlagBits)
+                  000026ea    00000002     (.common:NTC_TMP_FlagBits)
+                  000026ec    00000002     (.common:SpeakerFlagBits)
+                  000026ee    00000002     (.common:Step_Motor_FlagBits)
+                  000026f0    00000002     (.common:TimeFlag1Bits)
+                  000026f2    00000002     (.common:TimeFlag2Bits)
+                  000026f4    00000002     (.common:Update_01Bits)
+                  000026f6    00000002     (.common:Update_02Bits)
+                  000026f8    00000002     (.common:Update_03Bits)
+                  000026fa    00000002     (.common:average)
+                  000026fc    00000002     (.common:hightLight_01Bits)
+                  000026fe    00000002     (.common:hightLight_02Bits)
+                  00002700    00000002     (.common:k)
+                  00002702    00000002     (.common:key)
+                  00002704    00000002     (.common:m)
+                  00002706    00000002     (.common:n)
 
-.data      0    00002726    00000105     UNINITIALIZED
-                  00002726    00000060     Speaker.obj (.data:song_tone_table)
-                  00002786    00000030     Speaker.obj (.data:song_long_table)
-                  000027b6    00000020     LCD_TFT_ILI9325.obj (.data)
-                  000027d6    0000001a     System.obj (.data)
-                  000027f0    0000000e     MatrixKey.obj (.data)
-                  000027fe    0000000b     HR202_Humidity.obj (.data)
-                  00002809    00000001     UART_RS232.obj (.data)
-                  0000280a    00000008     Key.obj (.data)
-                  00002812    00000006     main.obj (.data)
-                  00002818    00000005     DC_Motor.obj (.data)
-                  0000281d    00000001     UART_RS485.obj (.data)
-                  0000281e    00000005     Step_Motor.obj (.data)
-                  00002823    00000001     --HOLE--
-                  00002824    00000004     Speaker.obj (.data)
-                  00002828    00000003     ADC.obj (.data)
+.data      0    00002708    0000010b     UNINITIALIZED
+                  00002708    00000060     Speaker.obj (.data:song_tone_table)
+                  00002768    00000030     Speaker.obj (.data:song_long_table)
+                  00002798    00000020     LCD_TFT_ILI9325.obj (.data)
+                  000027b8    0000001a     System.obj (.data)
+                  000027d2    0000000e     MatrixKey.obj (.data)
+                  000027e0    0000000c     main.obj (.data)
+                  000027ec    0000000b     HR202_Humidity.obj (.data)
+                  000027f7    00000001     UART_RS232.obj (.data)
+                  000027f8    00000008     Key.obj (.data)
+                  00002800    00000005     DC_Motor.obj (.data)
+                  00002805    00000001     UART_RS485.obj (.data)
+                  00002806    00000005     Step_Motor.obj (.data)
+                  0000280b    00000001     --HOLE--
+                  0000280c    00000004     Speaker.obj (.data)
+                  00002810    00000003     ADC.obj (.data)
 
 .stack     0    00006360    000000a0     UNINITIALIZED
                   00006360    00000004     rts430x_lc_rd_eabi.lib : boot.c.obj (.stack)
                   00006364    0000009c     --HOLE--
 
 .text:_isr 
-*          0    00008000    00000260     
-                  00008000    00000168     main.obj (.text:_isr:ADC12ISR)
-                  00008168    0000003c     Interrupt.obj (.text:_isr:TIMER1_A1_ISR)
-                  000081a4    00000032     Interrupt.obj (.text:_isr:USCI_A1_ISR)
-                  000081d6    00000032     main.obj (.text:_isr:port_4)
-                  00008208    0000001c     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs)
-                  00008224    00000018     Interrupt.obj (.text:_isr:TIMER1_A0_ISR)
-                  0000823c    00000012     Interrupt.obj (.text:_isr:TIMER0_A1_ISR)
-                  0000824e    0000000a     Interrupt.obj (.text:_isr:TIMER2_A0_ISR)
-                  00008258    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+*          0    00008000    000001da     
+                  00008000    000000e2     main.obj (.text:_isr:ADC12ISR)
+                  000080e2    0000003c     Interrupt.obj (.text:_isr:TIMER1_A1_ISR)
+                  0000811e    00000032     Interrupt.obj (.text:_isr:USCI_A1_ISR)
+                  00008150    00000032     main.obj (.text:_isr:port_4)
+                  00008182    0000001c     rts430x_lc_rd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noargs)
+                  0000819e    00000018     Interrupt.obj (.text:_isr:TIMER1_A0_ISR)
+                  000081b6    00000012     Interrupt.obj (.text:_isr:TIMER0_A1_ISR)
+                  000081c8    0000000a     Interrupt.obj (.text:_isr:TIMER2_A0_ISR)
+                  000081d2    00000008     rts430x_lc_rd_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
-.cinit     0    00008cc4    0000009a     
-                  00008cc4    00000077     (.cinit..data.load) [load image, compression = lzss]
-                  00008d3b    00000001     --HOLE-- [fill = 0]
-                  00008d3c    0000000c     (__TI_handler_table)
-                  00008d48    00000006     (.cinit..bss.load) [load image, compression = zero_init]
-                  00008d4e    00000010     (__TI_cinit_table)
+.cinit     0    000081da    0000009a     
+                  000081da    00000077     (.cinit..data.load) [load image, compression = lzss]
+                  00008251    00000001     --HOLE-- [fill = 0]
+                  00008252    0000000c     (__TI_handler_table)
+                  0000825e    00000006     (.cinit..bss.load) [load image, compression = zero_init]
+                  00008264    00000010     (__TI_cinit_table)
 
 .binit     0    00008000    00000000     
 
 .init_array 
 *          0    00008000    00000000     UNINITIALIZED
-
-.const     0    00008260    00000a64     
-                  00008260    000005f0     LCD_TFT_ILI9325.obj (.const:asc2_1608)
-                  00008850    00000474     LCD_TFT_ILI9325.obj (.const:asc2_1206)
 
 PORT4      0    0000ffca    00000002     
                   0000ffca    00000002     main.obj (.int37)
@@ -269,87 +262,78 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    000014f8     
+.text      0    00010000    0000114e     
                   00010000    000002b6     LCD_TFT_ILI9325.obj (.text:Init_Register_LCD_TFT_ILI9325)
                   000102b6    00000144     TM1638.obj (.text:Read_MatrixKey_TM1638)
                   000103fa    00000128     Step_Motor.obj (.text:Positive_Step_Motor)
                   00010522    00000124     Step_Motor.obj (.text:Reverse_Step_Motor)
-                  00010646    000000d2     main.obj (.text:Trans_val)
-                  00010718    000000ce     LCD_TFT_ILI9325.obj (.text:LCD_TFT_ShowChar)
-                  000107e6    000000b2     Key.obj (.text:Scan_Key)
-                  00010898    000000aa     main.obj (.text:Conversion)
-                  00010942    0000009e     LCD_TFT_ILI9325.obj (.text:LCD_TFT_ShowString)
-                  000109e0    0000008a     MatrixKey.obj (.text:Scan_MatrixKey)
-                  00010a6a    0000007c     main.obj (.text:Translator)
-                  00010ae6    0000007a     LCD_TFT_ILI9325.obj (.text:Init_LCD_TFT_ILI9325)
-                  00010b60    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00010bd6    00000072     Speaker.obj (.text:Deal_Song_Beat_Speaker)
-                  00010c48    00000064     LCD_TFT_ILI9325.obj (.text:Init_GPIO_LCD_TFT_ILI9325)
-                  00010cac    00000062     main.obj (.text:main)
-                  00010d0e    00000054     System.obj (.text:System_1ms_Task)
-                  00010d62    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
-                  00010db6    00000052     TM1638.obj (.text:TM1638_Read)
-                  00010e08    00000050     System.obj (.text:System_500ms_Task)
-                  00010e58    00000048     TM1638.obj (.text:TM1638_Write)
-                  00010ea0    00000046     Buzzer.obj (.text:Check_OutputBuzz)
-                  00010ee6    00000046     LCD_TFT_ILI9325.obj (.text:Reset_LCD_TFT_ILI9325)
-                  00010f2c    00000042     System.obj (.text:System_250ms_Task)
-                  00010f6e    0000003e     LCD_TFT_ILI9325.obj (.text:LCD_TFT_ClearDisBuf)
-                  00010fac    0000003e     rts430x_lc_rd_eabi.lib : lsl32.asm.obj (.text:l_lsl_const)
-                  00010fea    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
-                  00011028    0000003c     HR202_Humidity.obj (.text:Sample_HR202_Frequency)
-                  00011064    0000003a     SPI.obj (.text:Initial_SPI_B)
-                  0001109e    0000003a     LCD_TFT_ILI9325.obj (.text:LCD_TFT_Clear)
-                  000110d8    00000038     Speaker.obj (.text:Deal_Song_Tone_Speaker)
-                  00011110    0000002c     Speaker.obj (.text:Deal_Buzz_Speaker)
-                  0001113c    0000002c     System.obj (.text:System_Timing_Task)
-                  00011168    0000002c     rts430x_lc_rd_eabi.lib : div16s.asm.obj (.text)
-                  00011194    00000028     Buzzer.obj (.text:Check_Alarm_Buzz)
-                  000111bc    00000028     Speaker.obj (.text:Check_Buzz_Speaker)
-                  000111e4    00000028     LCD_Segment.obj (.text:Close_LCD_Segment)
-                  0001120c    00000028     Speaker.obj (.text:Disable_Speaker)
-                  00011234    00000028     System.obj (.text:System_1s_Task)
-                  0001125c    00000026     System.obj (.text:Timing_In_Work)
-                  00011282    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  000112a6    00000024                            : mult32_f5hw.asm.obj (.text)
-                  000112ca    00000022     System.obj (.text:System_10ms_Task)
-                  000112ec    00000022     System.obj (.text:System_Clock)
-                  0001130e    0000001e     LCD_TFT_ILI9325.obj (.text:ILI9325_WriteData)
-                  0001132c    0000001e     LCD_TFT_ILI9325.obj (.text:ILI9325_WriteRegIndex)
-                  0001134a    0000001c     LCD_TFT_ILI9325.obj (.text:LCD_TFT_SetCursor)
-                  00011366    0000001c     SPI.obj (.text:Send_OneByte_SPI_B)
-                  00011382    0000001c     System.obj (.text:System_100ms_Task)
-                  0001139e    0000001a     DC_Motor.obj (.text:Sample_DC_Motor_Frequency)
-                  000113b8    00000018     LCD_Segment.obj (.text:Clear_LCD_Segment)
-                  000113d0    00000018     Step_Motor.obj (.text:Deal_Step_Motor)
-                  000113e8    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
-                  00011400    00000016     Step_Motor.obj (.text:Enable_Step_Motor)
-                  00011416    00000016     LCD_TFT_ILI9325.obj (.text:LCD_TFT_DrawPoint)
-                  0001142c    00000016     rts430x_lc_rd_eabi.lib : memset.c.obj (.text:memset)
-                  00011442    00000016                            : div16u.asm.obj (.text)
-                  00011458    00000014     main.obj (.text:DAC_Init)
-                  0001146c    00000014     LCD_Segment.obj (.text:EnAllSeg_LCD_Segment)
-                  00011480    00000014     LCD_Segment.obj (.text:EnModule_LCD_Segment)
-                  00011494    00000014     main.obj (.text:Init_TS3A5017DR)
-                  000114a8    00000014     LCD_TFT_ILI9325.obj (.text:LCD_TFT_WriteReg)
-                  000114bc    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  000114d0    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  000114e2    0000000a     LCD_TFT_ILI9325.obj (.text:LCD_TFT_WriteRAM_CMD)
-                  000114ec    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  000114f2    00000004                            : pre_init.c.obj (.text:_system_pre_init)
-                  000114f6    00000002                            : startup.c.obj (.text:_system_post_cinit)
+                  00010646    000000b2     Key.obj (.text:Scan_Key)
+                  000106f8    0000009c     LCD_TFT_ILI9325.obj (.text:LCD_TFT_DrawLine)
+                  00010794    0000008a     MatrixKey.obj (.text:Scan_MatrixKey)
+                  0001081e    0000007a     LCD_TFT_ILI9325.obj (.text:Init_LCD_TFT_ILI9325)
+                  00010898    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0001090e    00000072     Speaker.obj (.text:Deal_Song_Beat_Speaker)
+                  00010980    00000064     LCD_TFT_ILI9325.obj (.text:Init_GPIO_LCD_TFT_ILI9325)
+                  000109e4    00000062     main.obj (.text:main)
+                  00010a46    00000054     System.obj (.text:System_1ms_Task)
+                  00010a9a    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
+                  00010aee    00000052     TM1638.obj (.text:TM1638_Read)
+                  00010b40    00000050     System.obj (.text:System_500ms_Task)
+                  00010b90    00000048     TM1638.obj (.text:TM1638_Write)
+                  00010bd8    00000046     Buzzer.obj (.text:Check_OutputBuzz)
+                  00010c1e    00000046     LCD_TFT_ILI9325.obj (.text:Reset_LCD_TFT_ILI9325)
+                  00010c64    00000042     System.obj (.text:System_250ms_Task)
+                  00010ca6    0000003e     LCD_TFT_ILI9325.obj (.text:LCD_TFT_ClearDisBuf)
+                  00010ce4    0000003c     HR202_Humidity.obj (.text:Sample_HR202_Frequency)
+                  00010d20    0000003a     SPI.obj (.text:Initial_SPI_B)
+                  00010d5a    0000003a     LCD_TFT_ILI9325.obj (.text:LCD_TFT_Clear)
+                  00010d94    00000038     Speaker.obj (.text:Deal_Song_Tone_Speaker)
+                  00010dcc    0000002c     Speaker.obj (.text:Deal_Buzz_Speaker)
+                  00010df8    0000002c     System.obj (.text:System_Timing_Task)
+                  00010e24    00000028     Buzzer.obj (.text:Check_Alarm_Buzz)
+                  00010e4c    00000028     Speaker.obj (.text:Check_Buzz_Speaker)
+                  00010e74    00000028     LCD_Segment.obj (.text:Close_LCD_Segment)
+                  00010e9c    00000028     Speaker.obj (.text:Disable_Speaker)
+                  00010ec4    00000028     System.obj (.text:System_1s_Task)
+                  00010eec    00000026     System.obj (.text:Timing_In_Work)
+                  00010f12    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00010f36    00000022     System.obj (.text:System_10ms_Task)
+                  00010f58    00000022     System.obj (.text:System_Clock)
+                  00010f7a    0000001e     LCD_TFT_ILI9325.obj (.text:ILI9325_WriteData)
+                  00010f98    0000001e     LCD_TFT_ILI9325.obj (.text:ILI9325_WriteRegIndex)
+                  00010fb6    0000001c     LCD_TFT_ILI9325.obj (.text:LCD_TFT_SetCursor)
+                  00010fd2    0000001c     SPI.obj (.text:Send_OneByte_SPI_B)
+                  00010fee    0000001c     System.obj (.text:System_100ms_Task)
+                  0001100a    0000001a     DC_Motor.obj (.text:Sample_DC_Motor_Frequency)
+                  00011024    00000018     LCD_Segment.obj (.text:Clear_LCD_Segment)
+                  0001103c    00000018     Step_Motor.obj (.text:Deal_Step_Motor)
+                  00011054    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
+                  0001106c    00000016     Step_Motor.obj (.text:Enable_Step_Motor)
+                  00011082    00000016     LCD_TFT_ILI9325.obj (.text:LCD_TFT_DrawPoint)
+                  00011098    00000016     rts430x_lc_rd_eabi.lib : div16u.asm.obj (.text)
+                  000110ae    00000014     main.obj (.text:DAC_Init)
+                  000110c2    00000014     LCD_Segment.obj (.text:EnAllSeg_LCD_Segment)
+                  000110d6    00000014     LCD_Segment.obj (.text:EnModule_LCD_Segment)
+                  000110ea    00000014     main.obj (.text:Init_TS3A5017DR)
+                  000110fe    00000014     LCD_TFT_ILI9325.obj (.text:LCD_TFT_WriteReg)
+                  00011112    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
+                  00011126    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00011138    0000000a     LCD_TFT_ILI9325.obj (.text:LCD_TFT_WriteRAM_CMD)
+                  00011142    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  00011148    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  0001114c    00000002                            : startup.c.obj (.text:_system_post_cinit)
 
 MODULE SUMMARY
 
        Module                       code   ro data   rw data
        ------                       ----   -------   -------
     .\
-       main.obj                     1052   4         74     
+       main.obj                     414    4         50     
     +--+----------------------------+------+---------+---------+
-       Total:                       1052   4         74     
+       Total:                       414    4         50     
                                                             
     .\LCD_TFT_Driver\
-       LCD_TFT_ILI9325.obj          1610   2660      660    
+       LCD_TFT_ILI9325.obj          1402   0         660    
        Step_Motor.obj               634    0         7      
        Speaker.obj                  294    0         224    
        System.obj                   448    0         30     
@@ -369,20 +353,15 @@ MODULE SUMMARY
        UART_RS232.obj               0      0         1      
        UART_RS485.obj               0      0         1      
     +--+----------------------------+------+---------+---------+
-       Total:                       4328   2670      992    
+       Total:                       4120   10        992    
                                                             
     C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.4.LTS\lib\rts430x_lc_rd_eabi.lib
        copy_decompress_lzss.c.obj   118    0         0      
        autoinit.c.obj               84     0         0      
-       lsl32.asm.obj                62     0         0      
-       lsr32.asm.obj                62     0         0      
-       div16s.asm.obj               44     0         0      
        copy_zero_init.c.obj         36     0         0      
-       mult32_f5hw.asm.obj          36     0         0      
        boot.c.obj                   28     2         0      
        mult16_f5hw.asm.obj          24     0         0      
        div16u.asm.obj               22     0         0      
-       memset.c.obj                 22     0         0      
        memcpy.c.obj                 20     0         0      
        copy_decompress_none.c.obj   18     0         0      
        isr_trap.asm.obj             8      0         0      
@@ -409,24 +388,24 @@ MODULE SUMMARY
        int62.asm.obj                0      2         0      
        startup.c.obj                2      0         0      
     +--+----------------------------+------+---------+---------+
-       Total:                       596    40        0      
+       Total:                       370    40        0      
                                                             
        Stack:                       0      0         160    
        Linker Generated:            0      153       0      
     +--+----------------------------+------+---------+---------+
-       Grand Total:                 5976   2867      1226   
+       Grand Total:                 4904   207       1202   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00008d4e records: 2, size/record: 8, table size: 16
-	.data: load addr=00008cc4, load size=00000077 bytes, run addr=00002726, run size=00000105 bytes, compression=lzss
-	.bss: load addr=00008d48, load size=00000006 bytes, run addr=00002400, run size=00000326 bytes, compression=zero_init
+__TI_cinit_table @ 00008264 records: 2, size/record: 8, table size: 16
+	.data: load addr=000081da, load size=00000077 bytes, run addr=00002708, run size=0000010b bytes, compression=lzss
+	.bss: load addr=0000825e, load size=00000006 bytes, run addr=00002400, run size=00000308 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00008d3c records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00008252 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -519,10 +498,10 @@ address   name
 00000732  ADC12MEM9                              
 00000733  ADC12MEM9_H                            
 00000732  ADC12MEM9_L                            
-000026f0  ADC_FlagBits                           
-000027b8  AD_Back                                
-000027b6  AD_Point                               
-000027d4  BACK_COLOR                             
+000026d2  ADC_FlagBits                           
+0000279a  AD_Back                                
+00002798  AD_Point                               
+000027b6  BACK_COLOR                             
 0000049e  BAKCHCTL                               
 0000049f  BAKCHCTL_H                             
 0000049e  BAKCHCTL_L                             
@@ -543,11 +522,11 @@ address   name
 00000486  BAKMEM3_L                              
 000004be  BCD2BIN                                
 000004bc  BIN2BCD                                
-000026f2  BuzzAlarmCycleCnt                      
-000026f4  BuzzAlarmCycleNum                      
-000026f6  BuzzFlagBits                           
-000026e8  BuzzTimeNum                            
-000114ec  C$$EXIT                                
+000026d4  BuzzAlarmCycleCnt                      
+000026d6  BuzzAlarmCycleNum                      
+000026d8  BuzzFlagBits                           
+000026ca  BuzzTimeNum                            
+00011142  C$$EXIT                                
 000008c0  CBCTL0                                 
 000008c1  CBCTL0_H                               
 000008c0  CBCTL0_L                               
@@ -576,12 +555,11 @@ address   name
 00000156  CRCRESR                                
 00000157  CRCRESR_H                              
 00000156  CRCRESR_L                              
-00011194  Check_Alarm_Buzz                       
-000111bc  Check_Buzz_Speaker                     
-00010ea0  Check_OutputBuzz                       
-000113b8  Clear_LCD_Segment                      
-000111e4  Close_LCD_Segment                      
-00010898  Conversion                             
+00010e24  Check_Alarm_Buzz                       
+00010e4c  Check_Buzz_Speaker                     
+00010bd8  Check_OutputBuzz                       
+00011024  Clear_LCD_Segment                      
+00010e74  Close_LCD_Segment                      
 00000786  DAC12_0CALCTL                          
 00000788  DAC12_0CALDAT                          
 00000780  DAC12_0CTL0                            
@@ -593,8 +571,8 @@ address   name
 00000792  DAC12_1CTL1                            
 00000794  DAC12_1DAT                             
 0000079e  DAC12_IV                               
-00011458  DAC_Init                               
-000026f8  DC_Motor_FlagBits                      
+000110ae  DAC_Init                               
+000026da  DC_Motor_FlagBits                      
 00000510  DMA0CTL                                
 00000511  DMA0CTL_H                              
 00000510  DMA0CTL_L                              
@@ -673,14 +651,14 @@ address   name
 0000050e  DMAIV                                  
 0000050f  DMAIV_H                                
 0000050e  DMAIV_L                                
-00011110  Deal_Buzz_Speaker                      
-00010bd6  Deal_Song_Beat_Speaker                 
-000110d8  Deal_Song_Tone_Speaker                 
-000113d0  Deal_Step_Motor                        
-0001120c  Disable_Speaker                        
-0001146c  EnAllSeg_LCD_Segment                   
-00011480  EnModule_LCD_Segment                   
-00011400  Enable_Step_Motor                      
+00010dcc  Deal_Buzz_Speaker                      
+0001090e  Deal_Song_Beat_Speaker                 
+00010d94  Deal_Song_Tone_Speaker                 
+0001103c  Deal_Step_Motor                        
+00010e9c  Disable_Speaker                        
+000110c2  EnAllSeg_LCD_Segment                   
+000110d6  EnModule_LCD_Segment                   
+0001106c  Enable_Step_Motor                      
 00000140  FCTL1                                  
 00000141  FCTL1_H                                
 00000140  FCTL1_L                                
@@ -690,57 +668,57 @@ address   name
 00000146  FCTL4                                  
 00000147  FCTL4_H                                
 00000146  FCTL4_L                                
-000027d0  Fixed_Back                             
-000027ce  Fixed_Point                            
-000027df  G_100msCnt                             
-000027de  G_10msCnt                              
-000027e6  G_1ms_Case                             
-000027e4  G_1sCnt                                
-000027e0  G_250msCnt                             
-000027e2  G_500msCnt                             
-0000281a  G_DC_Speed                             
-00002818  G_DC_SpeedCnt                          
-0000281c  G_DC_WorkState                         
-000027f3  G_DecimalPoint                         
-00002800  G_HR202_Frequency                      
-00002808  G_HR202_FrequencyCnt                   
-00002806  G_HR202_FrequencyEnd                   
-00002804  G_HR202_FrequencyStart                 
-000027fe  G_HR202_Humidity                       
-000027f5  G_KeyPlace_Column                      
-000027f4  G_KeyPlace_Row                         
-000027f6  G_KeyValue_Addr                        
-00002828  G_LastAdResult                         
-000027ea  G_Last_MainState                       
-000027ee  G_Last_WorkState                       
+000027b2  Fixed_Back                             
+000027b0  Fixed_Point                            
+000027c1  G_100msCnt                             
+000027c0  G_10msCnt                              
+000027c8  G_1ms_Case                             
+000027c6  G_1sCnt                                
+000027c2  G_250msCnt                             
+000027c4  G_500msCnt                             
+00002802  G_DC_Speed                             
+00002800  G_DC_SpeedCnt                          
+00002804  G_DC_WorkState                         
+000027d5  G_DecimalPoint                         
+000027ee  G_HR202_Frequency                      
+000027f6  G_HR202_FrequencyCnt                   
+000027f4  G_HR202_FrequencyEnd                   
+000027f2  G_HR202_FrequencyStart                 
+000027ec  G_HR202_Humidity                       
+000027d7  G_KeyPlace_Column                      
+000027d6  G_KeyPlace_Row                         
+000027d8  G_KeyValue_Addr                        
+00002810  G_LastAdResult                         
+000027cc  G_Last_MainState                       
+000027d0  G_Last_WorkState                       
 00002400  G_LcdBuf                               
-000027e8  G_MainState                            
-000027f1  G_MatrixKeyCnt                         
-000027f0  G_MatrixKeyValue                       
-00002809  G_RxData_RS232                         
-0000281d  G_RxData_RS485                         
-0000281e  G_Step_Speed                           
-00002820  G_Step_WorkState                       
-000027d6  G_TimingCnt                            
-000027da  G_Timing_InWork_Cnt                    
-00002824  G_Timing_Speaker_Cnt                   
-000027f2  G_TotalKeyNum                          
-000027ec  G_WorkState                            
-000027c0  HL_Menu_Back                           
-000027be  HL_Menu_Point                          
-000027c8  HL_Test_Back                           
-000027c6  HL_Test_Point                          
-000026fa  HR202_Humidity_FlagBits                
-0001130e  ILI9325_WriteData                      
-0001132c  ILI9325_WriteRegIndex                  
-000026fc  INA21x_FlagBits                        
-00010c48  Init_GPIO_LCD_TFT_ILI9325              
-00010ae6  Init_LCD_TFT_ILI9325                   
+000027ca  G_MainState                            
+000027d3  G_MatrixKeyCnt                         
+000027d2  G_MatrixKeyValue                       
+000027f7  G_RxData_RS232                         
+00002805  G_RxData_RS485                         
+00002806  G_Step_Speed                           
+00002808  G_Step_WorkState                       
+000027b8  G_TimingCnt                            
+000027bc  G_Timing_InWork_Cnt                    
+0000280c  G_Timing_Speaker_Cnt                   
+000027d4  G_TotalKeyNum                          
+000027ce  G_WorkState                            
+000027a2  HL_Menu_Back                           
+000027a0  HL_Menu_Point                          
+000027aa  HL_Test_Back                           
+000027a8  HL_Test_Point                          
+000026dc  HR202_Humidity_FlagBits                
+00010f7a  ILI9325_WriteData                      
+00010f98  ILI9325_WriteRegIndex                  
+000026de  INA21x_FlagBits                        
+00010980  Init_GPIO_LCD_TFT_ILI9325              
+0001081e  Init_LCD_TFT_ILI9325                   
 00010000  Init_Register_LCD_TFT_ILI9325          
-00011494  Init_TS3A5017DR                        
-00011064  Initial_SPI_B                          
-000026fe  KeyFlagBits                            
-0000280a  KeyValue                               
+000110ea  Init_TS3A5017DR                        
+00010d20  Initial_SPI_B                          
+000026e0  KeyFlagBits                            
+000027f8  KeyValue                               
 00000a04  LCDBBLKCTL                             
 00000a05  LCDBBLKCTL_H                           
 00000a04  LCDBBLKCTL_L                           
@@ -820,18 +798,17 @@ address   name
 00000a26  LCDM7                                  
 00000a27  LCDM8                                  
 00000a28  LCDM9                                  
-00002700  LCD_Seg_FlagBits                       
-0001109e  LCD_TFT_Clear                          
-00010f6e  LCD_TFT_ClearDisBuf                    
-00011416  LCD_TFT_DrawPoint                      
-00002702  LCD_TFT_FlagBits                       
-0001134a  LCD_TFT_SetCursor                      
-00010718  LCD_TFT_ShowChar                       
-00010942  LCD_TFT_ShowString                     
-0001130e  LCD_TFT_WriteRAM                       
-000114e2  LCD_TFT_WriteRAM_CMD                   
-000114a8  LCD_TFT_WriteReg                       
-00002704  LED_Seg_FlagBits                       
+000026e2  LCD_Seg_FlagBits                       
+00010d5a  LCD_TFT_Clear                          
+00010ca6  LCD_TFT_ClearDisBuf                    
+000106f8  LCD_TFT_DrawLine                       
+00011082  LCD_TFT_DrawPoint                      
+000026e4  LCD_TFT_FlagBits                       
+00010fb6  LCD_TFT_SetCursor                      
+00010f7a  LCD_TFT_WriteRAM                       
+00011138  LCD_TFT_WriteRAM_CMD                   
+000110fe  LCD_TFT_WriteReg                       
+000026e6  LED_Seg_FlagBits                       
 000004c4  MAC                                    
 000004da  MAC32H                                 
 000004db  MAC32H_H                               
@@ -871,12 +848,12 @@ address   name
 000004c2  MPYS_L                                 
 000004c1  MPY_H                                  
 000004c0  MPY_L                                  
-00002706  MatrixKeyFlagBits                      
-000027bc  Menu_Back                              
-000027ba  Menu_Point                             
-000027cc  Monitor_Back                           
-000027ca  Monitor_Point                          
-00002708  NTC_TMP_FlagBits                       
+000026e8  MatrixKeyFlagBits                      
+0000279e  Menu_Back                              
+0000279c  Menu_Point                             
+000027ae  Monitor_Back                           
+000027ac  Monitor_Point                          
+000026ea  NTC_TMP_FlagBits                       
 000004c8  OP2                                    
 000004e2  OP2H                                   
 000004e3  OP2H_H                                 
@@ -1046,7 +1023,7 @@ address   name
 0000012e  PMMRIE                                 
 0000012f  PMMRIE_H                               
 0000012e  PMMRIE_L                               
-000027d2  POINT_COLOR                            
+000027b4  POINT_COLOR                            
 000103fa  Positive_Step_Motor                    
 00000158  RCCTL0                                 
 00000159  RCCTL0_H                               
@@ -1107,7 +1084,7 @@ address   name
 000004b7  RTCYEAR_H                              
 000004b6  RTCYEAR_L                              
 000102b6  Read_MatrixKey_TM1638                  
-00010ee6  Reset_LCD_TFT_ILI9325                  
+00010c1e  Reset_LCD_TFT_ILI9325                  
 00010522  Reverse_Step_Motor                     
 00000100  SFRIE1                                 
 00000101  SFRIE1_H                               
@@ -1163,21 +1140,21 @@ address   name
 0000019a  SYSUNIV                                
 0000019b  SYSUNIV_H                              
 0000019a  SYSUNIV_L                              
-0001139e  Sample_DC_Motor_Frequency              
-00011028  Sample_HR202_Frequency                 
-000107e6  Scan_Key                               
-000109e0  Scan_MatrixKey                         
-00011366  Send_OneByte_SPI_B                     
-0000270a  SpeakerFlagBits                        
-0000270c  Step_Motor_FlagBits                    
-00011382  System_100ms_Task                      
-000112ca  System_10ms_Task                       
-00010d0e  System_1ms_Task                        
-00011234  System_1s_Task                         
-00010f2c  System_250ms_Task                      
-00010e08  System_500ms_Task                      
-000112ec  System_Clock                           
-0001113c  System_Timing_Task                     
+0001100a  Sample_DC_Motor_Frequency              
+00010ce4  Sample_HR202_Frequency                 
+00010646  Scan_Key                               
+00010794  Scan_MatrixKey                         
+00010fd2  Send_OneByte_SPI_B                     
+000026ec  SpeakerFlagBits                        
+000026ee  Step_Motor_FlagBits                    
+00010fee  System_100ms_Task                      
+00010f36  System_10ms_Task                       
+00010a46  System_1ms_Task                        
+00010ec4  System_1s_Task                         
+00010c64  System_250ms_Task                      
+00010b40  System_500ms_Task                      
+00010f58  System_Clock                           
+00010df8  System_Timing_Task                     
 00000352  TA0CCR0                                
 00000354  TA0CCR1                                
 00000356  TA0CCR2                                
@@ -1230,17 +1207,15 @@ address   name
 000003e0  TB0EX0                                 
 000003ee  TB0IV                                  
 000003d0  TB0R                                   
-0000823c  TIMER0_A1_ISR                          
-00008224  TIMER1_A0_ISR                          
-00008168  TIMER1_A1_ISR                          
-0000824e  TIMER2_A0_ISR                          
-000027c4  Test_Back                              
-000027c2  Test_Point                             
-0000270e  TimeFlag1Bits                          
-00002710  TimeFlag2Bits                          
-0001125c  Timing_In_Work                         
-00010646  Trans_val                              
-00010a6a  Translator                             
+000081b6  TIMER0_A1_ISR                          
+0000819e  TIMER1_A0_ISR                          
+000080e2  TIMER1_A1_ISR                          
+000081c8  TIMER2_A0_ISR                          
+000027a6  Test_Back                              
+000027a4  Test_Point                             
+000026f0  TimeFlag1Bits                          
+000026f2  TimeFlag2Bits                          
+00010eec  Timing_In_Work                         
 000005d0  UCA0ABCTL                              
 000005c6  UCA0BRW                                
 000005c7  UCA0BRW_H                              
@@ -1476,23 +1451,23 @@ address   name
 00000932  USBVECINT                              
 00000933  USBVECINT_H                            
 00000932  USBVECINT_L                            
-000081a4  USCI_A1_ISR                            
-00002712  Update_01Bits                          
-00002714  Update_02Bits                          
-00002716  Update_03Bits                          
+0000811e  USCI_A1_ISR                            
+000026f4  Update_01Bits                          
+000026f6  Update_02Bits                          
+000026f8  Update_03Bits                          
 0000015c  WDTCTL                                 
 0000015d  WDTCTL_H                               
 0000015c  WDTCTL_L                               
 00006400  __STACK_END                            
 000000a0  __STACK_SIZE                           
-00008d4e  __TI_CINIT_Base                        
-00008d5e  __TI_CINIT_Limit                       
-00008d3c  __TI_Handler_Table_Base                
-00008d48  __TI_Handler_Table_Limit               
-00008258  __TI_ISR_TRAP                          
-00010d62  __TI_auto_init_nobinit_nopinit_hold_wdt
-00010b60  __TI_decompress_lzss                   
-000114d0  __TI_decompress_none                   
+00008264  __TI_CINIT_Base                        
+00008274  __TI_CINIT_Limit                       
+00008252  __TI_Handler_Table_Base                
+0000825e  __TI_Handler_Table_Limit               
+000081d2  __TI_ISR_TRAP                          
+00010a9a  __TI_auto_init_nobinit_nopinit_hold_wdt
+00010898  __TI_decompress_lzss                   
+00011126  __TI_decompress_none                   
 0000ffca  __TI_int37                             
 0000ffcc  __TI_int38                             
 0000ffce  __TI_int39                             
@@ -1522,86 +1497,50 @@ address   name
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   
-00011282  __TI_zero_init_nomemset                
+00010f12  __TI_zero_init_nomemset                
 ffffffff  __c_args__                             
-00011168  __mspabi_divi                          
-00011442  __mspabi_divu                          
-000113e8  __mspabi_mpyi_f5hw                     
-000112a6  __mspabi_mpyl_f5hw                     
-00011168  __mspabi_remi                          
-00011442  __mspabi_remu                          
-00010fe4  __mspabi_slll_1                        
-00010fc0  __mspabi_slll_10                       
-00010fbc  __mspabi_slll_11                       
-00010fb8  __mspabi_slll_12                       
-00010fb4  __mspabi_slll_13                       
-00010fb0  __mspabi_slll_14                       
-00010fac  __mspabi_slll_15                       
-00010fe0  __mspabi_slll_2                        
-00010fdc  __mspabi_slll_3                        
-00010fd8  __mspabi_slll_4                        
-00010fd4  __mspabi_slll_5                        
-00010fd0  __mspabi_slll_6                        
-00010fcc  __mspabi_slll_7                        
-00010fc8  __mspabi_slll_8                        
-00010fc4  __mspabi_slll_9                        
-00011022  __mspabi_srll_1                        
-00010ffe  __mspabi_srll_10                       
-00010ffa  __mspabi_srll_11                       
-00010ff6  __mspabi_srll_12                       
-00010ff2  __mspabi_srll_13                       
-00010fee  __mspabi_srll_14                       
-00010fea  __mspabi_srll_15                       
-0001101e  __mspabi_srll_2                        
-0001101a  __mspabi_srll_3                        
-00011016  __mspabi_srll_4                        
-00011012  __mspabi_srll_5                        
-0001100e  __mspabi_srll_6                        
-0001100a  __mspabi_srll_7                        
-00011006  __mspabi_srll_8                        
-00011002  __mspabi_srll_9                        
-00008208  _c_int00_noargs                        
+00011098  __mspabi_divu                          
+00011054  __mspabi_mpyi_f5hw                     
+00011098  __mspabi_remu                          
+00008182  _c_int00_noargs                        
 0000fffe  _reset_vector                          
 00006360  _stack                                 
-000114f6  _system_post_cinit                     
-000114f2  _system_pre_init                       
-000114ec  abort                                  
-00008850  asc2_1206                              
-00008260  asc2_1608                              
-00002718  average                                
-000026ca  con                                    
-0000271a  hightLight_01Bits                      
-0000271c  hightLight_02Bits                      
-00002812  index                                  
-0000271e  k                                      
-00002720  key                                    
-000026d4  lcd_data                               
-00002722  m                                      
-00010cac  main                                   
-000114bc  memcpy                                 
-0001142c  memset                                 
-00002816  mode2                                  
-00002724  n                                      
-0000282a  pAdCnt                                 
-0000280c  pKeyBuffer                             
-0000280d  pKeyBuffer1                            
-0000280e  pKeyCnt                                
-0000280f  pKeyNullCnt                            
-0000280b  pKeyResult                             
-00002810  pLongKeyCnt                            
-000027fc  pLongMatrixKeyCnt                      
-000027f9  pMatrixKeyBuffer                       
-000027fa  pMatrixKeyCnt                          
-000027fb  pMatrixKeyNullCnt                      
-000027f8  pMatrixKeyResult                       
+0001114c  _system_post_cinit                     
+00011148  _system_pre_init                       
+00011142  abort                                  
+000026fa  average                                
+000026fc  hightLight_01Bits                      
+000026fe  hightLight_02Bits                      
+000027e0  index                                  
+00002700  k                                      
+00002702  key                                    
+00002704  m                                      
+000109e4  main                                   
+00011112  memcpy                                 
+000027ea  mode2                                  
+00002706  n                                      
+00002812  pAdCnt                                 
+000027fa  pKeyBuffer                             
+000027fb  pKeyBuffer1                            
+000027fc  pKeyCnt                                
+000027fd  pKeyNullCnt                            
+000027f9  pKeyResult                             
+000027fe  pLongKeyCnt                            
+000027de  pLongMatrixKeyCnt                      
+000027db  pMatrixKeyBuffer                       
+000027dc  pMatrixKeyCnt                          
+000027dd  pMatrixKeyNullCnt                      
+000027da  pMatrixKeyResult                       
 00002668  period_table                           
-000081d6  port_4                                 
+00008150  port_4                                 
 00002692  results                                
-000026ec  sin_data_pr                            
+000026ce  sin_data_pr                            
 000026b6  sin_table                              
-00002786  song_long_table                        
-00002726  song_tone_table                        
-000026de  trans_v                                
+00002768  song_long_table                        
+00002708  song_tone_table                        
+000027e2  xp                                     
+000027e4  yp                                     
+000027e6  yp1                                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2530,121 +2469,119 @@ address   name
 00002668  period_table                           
 00002692  results                                
 000026b6  sin_table                              
-000026ca  con                                    
-000026d4  lcd_data                               
-000026de  trans_v                                
-000026e8  BuzzTimeNum                            
-000026ec  sin_data_pr                            
-000026f0  ADC_FlagBits                           
-000026f2  BuzzAlarmCycleCnt                      
-000026f4  BuzzAlarmCycleNum                      
-000026f6  BuzzFlagBits                           
-000026f8  DC_Motor_FlagBits                      
-000026fa  HR202_Humidity_FlagBits                
-000026fc  INA21x_FlagBits                        
-000026fe  KeyFlagBits                            
-00002700  LCD_Seg_FlagBits                       
-00002702  LCD_TFT_FlagBits                       
-00002704  LED_Seg_FlagBits                       
-00002706  MatrixKeyFlagBits                      
-00002708  NTC_TMP_FlagBits                       
-0000270a  SpeakerFlagBits                        
-0000270c  Step_Motor_FlagBits                    
-0000270e  TimeFlag1Bits                          
-00002710  TimeFlag2Bits                          
-00002712  Update_01Bits                          
-00002714  Update_02Bits                          
-00002716  Update_03Bits                          
-00002718  average                                
-0000271a  hightLight_01Bits                      
-0000271c  hightLight_02Bits                      
-0000271e  k                                      
-00002720  key                                    
-00002722  m                                      
-00002724  n                                      
-00002726  song_tone_table                        
-00002786  song_long_table                        
-000027b6  AD_Point                               
-000027b8  AD_Back                                
-000027ba  Menu_Point                             
-000027bc  Menu_Back                              
-000027be  HL_Menu_Point                          
-000027c0  HL_Menu_Back                           
-000027c2  Test_Point                             
-000027c4  Test_Back                              
-000027c6  HL_Test_Point                          
-000027c8  HL_Test_Back                           
-000027ca  Monitor_Point                          
-000027cc  Monitor_Back                           
-000027ce  Fixed_Point                            
-000027d0  Fixed_Back                             
-000027d2  POINT_COLOR                            
-000027d4  BACK_COLOR                             
-000027d6  G_TimingCnt                            
-000027da  G_Timing_InWork_Cnt                    
-000027de  G_10msCnt                              
-000027df  G_100msCnt                             
-000027e0  G_250msCnt                             
-000027e2  G_500msCnt                             
-000027e4  G_1sCnt                                
-000027e6  G_1ms_Case                             
-000027e8  G_MainState                            
-000027ea  G_Last_MainState                       
-000027ec  G_WorkState                            
-000027ee  G_Last_WorkState                       
-000027f0  G_MatrixKeyValue                       
-000027f1  G_MatrixKeyCnt                         
-000027f2  G_TotalKeyNum                          
-000027f3  G_DecimalPoint                         
-000027f4  G_KeyPlace_Row                         
-000027f5  G_KeyPlace_Column                      
-000027f6  G_KeyValue_Addr                        
-000027f8  pMatrixKeyResult                       
-000027f9  pMatrixKeyBuffer                       
-000027fa  pMatrixKeyCnt                          
-000027fb  pMatrixKeyNullCnt                      
-000027fc  pLongMatrixKeyCnt                      
-000027fe  G_HR202_Humidity                       
-00002800  G_HR202_Frequency                      
-00002804  G_HR202_FrequencyStart                 
-00002806  G_HR202_FrequencyEnd                   
-00002808  G_HR202_FrequencyCnt                   
-00002809  G_RxData_RS232                         
-0000280a  KeyValue                               
-0000280b  pKeyResult                             
-0000280c  pKeyBuffer                             
-0000280d  pKeyBuffer1                            
-0000280e  pKeyCnt                                
-0000280f  pKeyNullCnt                            
-00002810  pLongKeyCnt                            
-00002812  index                                  
-00002816  mode2                                  
-00002818  G_DC_SpeedCnt                          
-0000281a  G_DC_Speed                             
-0000281c  G_DC_WorkState                         
-0000281d  G_RxData_RS485                         
-0000281e  G_Step_Speed                           
-00002820  G_Step_WorkState                       
-00002824  G_Timing_Speaker_Cnt                   
-00002828  G_LastAdResult                         
-0000282a  pAdCnt                                 
+000026ca  BuzzTimeNum                            
+000026ce  sin_data_pr                            
+000026d2  ADC_FlagBits                           
+000026d4  BuzzAlarmCycleCnt                      
+000026d6  BuzzAlarmCycleNum                      
+000026d8  BuzzFlagBits                           
+000026da  DC_Motor_FlagBits                      
+000026dc  HR202_Humidity_FlagBits                
+000026de  INA21x_FlagBits                        
+000026e0  KeyFlagBits                            
+000026e2  LCD_Seg_FlagBits                       
+000026e4  LCD_TFT_FlagBits                       
+000026e6  LED_Seg_FlagBits                       
+000026e8  MatrixKeyFlagBits                      
+000026ea  NTC_TMP_FlagBits                       
+000026ec  SpeakerFlagBits                        
+000026ee  Step_Motor_FlagBits                    
+000026f0  TimeFlag1Bits                          
+000026f2  TimeFlag2Bits                          
+000026f4  Update_01Bits                          
+000026f6  Update_02Bits                          
+000026f8  Update_03Bits                          
+000026fa  average                                
+000026fc  hightLight_01Bits                      
+000026fe  hightLight_02Bits                      
+00002700  k                                      
+00002702  key                                    
+00002704  m                                      
+00002706  n                                      
+00002708  song_tone_table                        
+00002768  song_long_table                        
+00002798  AD_Point                               
+0000279a  AD_Back                                
+0000279c  Menu_Point                             
+0000279e  Menu_Back                              
+000027a0  HL_Menu_Point                          
+000027a2  HL_Menu_Back                           
+000027a4  Test_Point                             
+000027a6  Test_Back                              
+000027a8  HL_Test_Point                          
+000027aa  HL_Test_Back                           
+000027ac  Monitor_Point                          
+000027ae  Monitor_Back                           
+000027b0  Fixed_Point                            
+000027b2  Fixed_Back                             
+000027b4  POINT_COLOR                            
+000027b6  BACK_COLOR                             
+000027b8  G_TimingCnt                            
+000027bc  G_Timing_InWork_Cnt                    
+000027c0  G_10msCnt                              
+000027c1  G_100msCnt                             
+000027c2  G_250msCnt                             
+000027c4  G_500msCnt                             
+000027c6  G_1sCnt                                
+000027c8  G_1ms_Case                             
+000027ca  G_MainState                            
+000027cc  G_Last_MainState                       
+000027ce  G_WorkState                            
+000027d0  G_Last_WorkState                       
+000027d2  G_MatrixKeyValue                       
+000027d3  G_MatrixKeyCnt                         
+000027d4  G_TotalKeyNum                          
+000027d5  G_DecimalPoint                         
+000027d6  G_KeyPlace_Row                         
+000027d7  G_KeyPlace_Column                      
+000027d8  G_KeyValue_Addr                        
+000027da  pMatrixKeyResult                       
+000027db  pMatrixKeyBuffer                       
+000027dc  pMatrixKeyCnt                          
+000027dd  pMatrixKeyNullCnt                      
+000027de  pLongMatrixKeyCnt                      
+000027e0  index                                  
+000027e2  xp                                     
+000027e4  yp                                     
+000027e6  yp1                                    
+000027ea  mode2                                  
+000027ec  G_HR202_Humidity                       
+000027ee  G_HR202_Frequency                      
+000027f2  G_HR202_FrequencyStart                 
+000027f4  G_HR202_FrequencyEnd                   
+000027f6  G_HR202_FrequencyCnt                   
+000027f7  G_RxData_RS232                         
+000027f8  KeyValue                               
+000027f9  pKeyResult                             
+000027fa  pKeyBuffer                             
+000027fb  pKeyBuffer1                            
+000027fc  pKeyCnt                                
+000027fd  pKeyNullCnt                            
+000027fe  pLongKeyCnt                            
+00002800  G_DC_SpeedCnt                          
+00002802  G_DC_Speed                             
+00002804  G_DC_WorkState                         
+00002805  G_RxData_RS485                         
+00002806  G_Step_Speed                           
+00002808  G_Step_WorkState                       
+0000280c  G_Timing_Speaker_Cnt                   
+00002810  G_LastAdResult                         
+00002812  pAdCnt                                 
 00006360  _stack                                 
 00006400  __STACK_END                            
 00008000  ADC12ISR                               
-00008168  TIMER1_A1_ISR                          
-000081a4  USCI_A1_ISR                            
-000081d6  port_4                                 
-00008208  _c_int00_noargs                        
-00008224  TIMER1_A0_ISR                          
-0000823c  TIMER0_A1_ISR                          
-0000824e  TIMER2_A0_ISR                          
-00008258  __TI_ISR_TRAP                          
-00008260  asc2_1608                              
-00008850  asc2_1206                              
-00008d3c  __TI_Handler_Table_Base                
-00008d48  __TI_Handler_Table_Limit               
-00008d4e  __TI_CINIT_Base                        
-00008d5e  __TI_CINIT_Limit                       
+000080e2  TIMER1_A1_ISR                          
+0000811e  USCI_A1_ISR                            
+00008150  port_4                                 
+00008182  _c_int00_noargs                        
+0000819e  TIMER1_A0_ISR                          
+000081b6  TIMER0_A1_ISR                          
+000081c8  TIMER2_A0_ISR                          
+000081d2  __TI_ISR_TRAP                          
+00008252  __TI_Handler_Table_Base                
+0000825e  __TI_Handler_Table_Limit               
+00008264  __TI_CINIT_Base                        
+00008274  __TI_CINIT_Limit                       
 0000ffca  __TI_int37                             
 0000ffcc  __TI_int38                             
 0000ffce  __TI_int39                             
@@ -2676,103 +2613,65 @@ address   name
 000102b6  Read_MatrixKey_TM1638                  
 000103fa  Positive_Step_Motor                    
 00010522  Reverse_Step_Motor                     
-00010646  Trans_val                              
-00010718  LCD_TFT_ShowChar                       
-000107e6  Scan_Key                               
-00010898  Conversion                             
-00010942  LCD_TFT_ShowString                     
-000109e0  Scan_MatrixKey                         
-00010a6a  Translator                             
-00010ae6  Init_LCD_TFT_ILI9325                   
-00010b60  __TI_decompress_lzss                   
-00010bd6  Deal_Song_Beat_Speaker                 
-00010c48  Init_GPIO_LCD_TFT_ILI9325              
-00010cac  main                                   
-00010d0e  System_1ms_Task                        
-00010d62  __TI_auto_init_nobinit_nopinit_hold_wdt
-00010e08  System_500ms_Task                      
-00010ea0  Check_OutputBuzz                       
-00010ee6  Reset_LCD_TFT_ILI9325                  
-00010f2c  System_250ms_Task                      
-00010f6e  LCD_TFT_ClearDisBuf                    
-00010fac  __mspabi_slll_15                       
-00010fb0  __mspabi_slll_14                       
-00010fb4  __mspabi_slll_13                       
-00010fb8  __mspabi_slll_12                       
-00010fbc  __mspabi_slll_11                       
-00010fc0  __mspabi_slll_10                       
-00010fc4  __mspabi_slll_9                        
-00010fc8  __mspabi_slll_8                        
-00010fcc  __mspabi_slll_7                        
-00010fd0  __mspabi_slll_6                        
-00010fd4  __mspabi_slll_5                        
-00010fd8  __mspabi_slll_4                        
-00010fdc  __mspabi_slll_3                        
-00010fe0  __mspabi_slll_2                        
-00010fe4  __mspabi_slll_1                        
-00010fea  __mspabi_srll_15                       
-00010fee  __mspabi_srll_14                       
-00010ff2  __mspabi_srll_13                       
-00010ff6  __mspabi_srll_12                       
-00010ffa  __mspabi_srll_11                       
-00010ffe  __mspabi_srll_10                       
-00011002  __mspabi_srll_9                        
-00011006  __mspabi_srll_8                        
-0001100a  __mspabi_srll_7                        
-0001100e  __mspabi_srll_6                        
-00011012  __mspabi_srll_5                        
-00011016  __mspabi_srll_4                        
-0001101a  __mspabi_srll_3                        
-0001101e  __mspabi_srll_2                        
-00011022  __mspabi_srll_1                        
-00011028  Sample_HR202_Frequency                 
-00011064  Initial_SPI_B                          
-0001109e  LCD_TFT_Clear                          
-000110d8  Deal_Song_Tone_Speaker                 
-00011110  Deal_Buzz_Speaker                      
-0001113c  System_Timing_Task                     
-00011168  __mspabi_divi                          
-00011168  __mspabi_remi                          
-00011194  Check_Alarm_Buzz                       
-000111bc  Check_Buzz_Speaker                     
-000111e4  Close_LCD_Segment                      
-0001120c  Disable_Speaker                        
-00011234  System_1s_Task                         
-0001125c  Timing_In_Work                         
-00011282  __TI_zero_init_nomemset                
-000112a6  __mspabi_mpyl_f5hw                     
-000112ca  System_10ms_Task                       
-000112ec  System_Clock                           
-0001130e  ILI9325_WriteData                      
-0001130e  LCD_TFT_WriteRAM                       
-0001132c  ILI9325_WriteRegIndex                  
-0001134a  LCD_TFT_SetCursor                      
-00011366  Send_OneByte_SPI_B                     
-00011382  System_100ms_Task                      
-0001139e  Sample_DC_Motor_Frequency              
-000113b8  Clear_LCD_Segment                      
-000113d0  Deal_Step_Motor                        
-000113e8  __mspabi_mpyi_f5hw                     
-00011400  Enable_Step_Motor                      
-00011416  LCD_TFT_DrawPoint                      
-0001142c  memset                                 
-00011442  __mspabi_divu                          
-00011442  __mspabi_remu                          
-00011458  DAC_Init                               
-0001146c  EnAllSeg_LCD_Segment                   
-00011480  EnModule_LCD_Segment                   
-00011494  Init_TS3A5017DR                        
-000114a8  LCD_TFT_WriteReg                       
-000114bc  memcpy                                 
-000114d0  __TI_decompress_none                   
-000114e2  LCD_TFT_WriteRAM_CMD                   
-000114ec  C$$EXIT                                
-000114ec  abort                                  
-000114f2  _system_pre_init                       
-000114f6  _system_post_cinit                     
+00010646  Scan_Key                               
+000106f8  LCD_TFT_DrawLine                       
+00010794  Scan_MatrixKey                         
+0001081e  Init_LCD_TFT_ILI9325                   
+00010898  __TI_decompress_lzss                   
+0001090e  Deal_Song_Beat_Speaker                 
+00010980  Init_GPIO_LCD_TFT_ILI9325              
+000109e4  main                                   
+00010a46  System_1ms_Task                        
+00010a9a  __TI_auto_init_nobinit_nopinit_hold_wdt
+00010b40  System_500ms_Task                      
+00010bd8  Check_OutputBuzz                       
+00010c1e  Reset_LCD_TFT_ILI9325                  
+00010c64  System_250ms_Task                      
+00010ca6  LCD_TFT_ClearDisBuf                    
+00010ce4  Sample_HR202_Frequency                 
+00010d20  Initial_SPI_B                          
+00010d5a  LCD_TFT_Clear                          
+00010d94  Deal_Song_Tone_Speaker                 
+00010dcc  Deal_Buzz_Speaker                      
+00010df8  System_Timing_Task                     
+00010e24  Check_Alarm_Buzz                       
+00010e4c  Check_Buzz_Speaker                     
+00010e74  Close_LCD_Segment                      
+00010e9c  Disable_Speaker                        
+00010ec4  System_1s_Task                         
+00010eec  Timing_In_Work                         
+00010f12  __TI_zero_init_nomemset                
+00010f36  System_10ms_Task                       
+00010f58  System_Clock                           
+00010f7a  ILI9325_WriteData                      
+00010f7a  LCD_TFT_WriteRAM                       
+00010f98  ILI9325_WriteRegIndex                  
+00010fb6  LCD_TFT_SetCursor                      
+00010fd2  Send_OneByte_SPI_B                     
+00010fee  System_100ms_Task                      
+0001100a  Sample_DC_Motor_Frequency              
+00011024  Clear_LCD_Segment                      
+0001103c  Deal_Step_Motor                        
+00011054  __mspabi_mpyi_f5hw                     
+0001106c  Enable_Step_Motor                      
+00011082  LCD_TFT_DrawPoint                      
+00011098  __mspabi_divu                          
+00011098  __mspabi_remu                          
+000110ae  DAC_Init                               
+000110c2  EnAllSeg_LCD_Segment                   
+000110d6  EnModule_LCD_Segment                   
+000110ea  Init_TS3A5017DR                        
+000110fe  LCD_TFT_WriteReg                       
+00011112  memcpy                                 
+00011126  __TI_decompress_none                   
+00011138  LCD_TFT_WriteRAM_CMD                   
+00011142  C$$EXIT                                
+00011142  abort                                  
+00011148  _system_pre_init                       
+0001114c  _system_post_cinit                     
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   
 ffffffff  __c_args__                             
 
-[1166 symbols]
+[1126 symbols]

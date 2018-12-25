@@ -10,6 +10,9 @@ uint32_t  results[NumOfResult+1];
 uint16_t  average;
 uint16_t  index = 0;
 uint8_t con[10] , trans_v[10], lcd_data[10];
+uint16_t  xp = 0;
+uint16_t  yp = 0;
+uint16_t  yp1 = 0;
 
 unsigned static int t = 0;
 unsigned int mode2=0;   //PWM
@@ -268,7 +271,8 @@ int main(void)
 	P4IFG &= ~(BIT0); // clean interrupt flag
 
     P6SEL |= BIT1;
-    ADC12CTL0 = ADC12ON + ADC12SHT0_15 + ADC12MSC + ADC12REFON + ADC12REF2_5V; // Turn on ADC12, set sampling time
+    ADC12CTL0 = ADC12ON + ADC12SHT0_0 + ADC12MSC + ADC12REFON + ADC12REF2_5V; // Turn on ADC12, set sampling time
+    //ADC12SHT0_15=1024 ADC12CLK cycles ADC12REF2_5V=REF=2.5V
     ADC12CTL1 = ADC12SHP + ADC12CONSEQ_2 + ADC12SSEL_1;       // Use sampling timer, set mode ,set clock ACLK
     ADC12MCTL0 |= ADC12INCH_1;   //change
     ADC12IE = ADC12IE0;                       // Enable ADC12IFG.0
@@ -319,33 +323,48 @@ __interrupt void ADC12ISR (void)
             else
                 P4OUT&=~BIT6;
 
-        Conversion(average , 10, con);
-        Trans_val(average , 10, trans_v);
+        //Conversion(average , 10, con);
+        //Trans_val(average , 10, trans_v);
 
         //LCDMEM[5] = char_gen[con[3]-48];
         //LCDMEM[4] = char_gen[con[2]-48];
         //LCDMEM[3] = char_gen[con[1]-48];
         //LCDMEM[2] = char_gen[con[0]-48];
 
-        Translator(average, lcd_data);
+        //Translator(average, lcd_data);
 
         //New Functions will be listed and debuged here.
-        LCD_TFT_ShowChar(2,2,lcd_data[0],2,0x001F,0xFFE0);
-        LCD_TFT_ShowChar(2,42,lcd_data[1],2,0x001F,0xFFE0);
-        LCD_TFT_ShowChar(2,82,lcd_data[2],2,0x001F,0xFFE0);
-        LCD_TFT_ShowChar(2,122,lcd_data[3],2,0x001F,0xFFE0);
-        LCD_TFT_ShowString(22,2,lcd_data,2,0x001F,0xFFE0);
+        //LCD_TFT_ShowChar(2,2,lcd_data[0],2,0x001F,0xFFE0);
+        //LCD_TFT_ShowChar(2,42,lcd_data[1],2,0x001F,0xFFE0);
+        //LCD_TFT_ShowChar(2,82,lcd_data[2],2,0x001F,0xFFE0);
+        //LCD_TFT_ShowChar(2,122,lcd_data[3],2,0x001F,0xFFE0);
+        //LCD_TFT_ShowString(2,2,lcd_data,2,0x001F,0xFFE0);
         //LCD_TFT_ShowString(u16 line,u16 column,u8 *ArrayPoint,u8 Font,u16 pointColor,u16 backColor);
+        //LCD_TFT_DrawPoint(240-average/16, xp, 0xFFFF);
+
+
+        //显示波形部分
+        yp = 240 - average / 18;
+        LCD_TFT_DrawLine(yp1, xp-1, yp, xp, 0xFFFF);
+        xp++;
+        if (xp == 320){
+            xp = 0;
+            LCD_TFT_Clear(0x0000);//清屏速度低到心肺停止
+        }
+        yp1 = yp;
+
+
 
 
 
         //End of new functions.
-
+/*
         for(i=0;i < NumOfResult;i++)
         {
             con[i] = 0 ;
             trans_v[i] = 0;
         }
+*/
     }
 }
 
